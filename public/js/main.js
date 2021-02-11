@@ -1,7 +1,12 @@
+/// use the delete button to remove user's posts
+const deleteBtn = document.querySelectorAll('.del')
+
+Array.from(deleteBtn).forEach((el) => {
+	el.addEventListener('click', deletePost)
+})
 
 
-
-
+/// function that links to delete request
 
 
 
