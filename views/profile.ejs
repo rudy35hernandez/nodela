@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css" />
+    <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+    <title>Profile</title>
+</head>
+<body class="profile">
+    <div id="topList">
+        <ul class="noStyle">
+            <li> <a href="/">Home</a></li>
+            <li>Feed</li>
+            <li> <a href="logout">Logout</a></li>
+        </ul>
+    </div>
+    <header class="major align-center">
+        <h1>Post your Nodella <%= user.nodellaUsername %> </h1>
+</header>
+
+<section>
+<!-- Here is where the post will be added -->
+</section>
+
+<article class="story">
+    
+    <form action="/posts/createPost" method="POST">
+        <label for="title" class="profileHeader">Title</label>
+        <input
+            type="text"
+            name="title"
+            id="push-title"
+            minlength="10"
+            required
+            />
+        <label for="story" class="profileHeader">My Story</label>
+        <textarea  
+            name="story" 
+            id="push-story" 
+            rows="4" cols="4" 
+            minlength="10" 
+            placeholder="story here" 
+            required>
+        </textarea> 
+    <br>
+    <input 
+        class="button primary icon solid"
+        id="submit"
+        type="submit"
+        value="Post"/>
+
+    </form>
+</article>
+
+<section class=>
+    <ul>
+      <% if(posts) { %>
+      <% posts.forEach(el => { %>
+      <!--desperate times call for desperate hr tags. I'm sorry :(-->
+          <li data-id='<%=el._id%>'> 
+           
+              <section>
+                <span> Author: <%= user.nodellaUsername %></span>
+                <hr>
+                <span> Title: <%= el.title %>  </span>
+                <hr>
+                <span> Story: <%= el.story %> </span>
+                <hr>
+                <span><%= "Created: " + el.createdAt.toLocaleDateString('en-US') %> </span>
+                </section>
+                <hr>
+                <span><i class="fas fa-trash del"></i>
+                </span>                 
+          </li>
+        
+      <% }); %> 
+      <% } %>
+    
+      </ul>
+      </section>
+      
+
+    
+</body>
+</html>
