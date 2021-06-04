@@ -9,6 +9,7 @@
     <title>Profile</title>
 </head>
 <body class="profile">
+    <section>
     <div id="topList">
         <ul class="noStyle">
             <li> <a href="/">Home</a></li>
@@ -35,6 +36,7 @@
             minlength="10"
             required
             />
+            <br>
         <label for="story" class="profileHeader">My Story</label>
         <textarea  
             name="story" 
@@ -54,23 +56,24 @@
     </form>
 </article>
 
-<section class=>
+<section class="newPost">
     <ul>
       <% if(posts) { %>
       <% posts.forEach(el => { %>
       <!--desperate times call for desperate hr tags. I'm sorry :(-->
+      
           <li data-id='<%=el._id%>'> 
            
-              <section>
-                <span> Author: <%= user.nodellaUsername %></span>
-                <hr>
-                <span> Title: <%= el.title %>  </span>
-                <hr>
-                <span> Story: <%= el.story %> </span>
-                <hr>
+              <ul>
+                <div class="postAuthor"> Author: <%= user.nodellaUsername %></div>
+            
+                <div class="postTitle"> Title: <%= el.title %>  </div>
+    
+                <div class="postContent"> Story: <%= el.story %> </div>
+        
                 <span><%= "Created: " + el.createdAt.toLocaleDateString('en-US') %> </span>
-                </section>
-                <hr>
+                </ul>
+            
                 <span><i class="fas fa-trash del"></i>
                 </span>                 
           </li>
@@ -80,7 +83,7 @@
     
       </ul>
       </section>
-      
+    </section>
 
     
 </body>
