@@ -10,5 +10,16 @@ module.exports = {
         }   catch(err){
             console.log(err)
         }
-    }
+    },
+    getFeed: async (req,res)=>{
+        console.log("user: ", req.user)
+        try{
+            const postItems = await Post.find()
+            console.log(postItems);
+            res.render('feed.ejs', {posts: postItems.reverse(), user: req.user})
+        }   catch(err){
+            console.log(err)
+        }
+    },
+
 }

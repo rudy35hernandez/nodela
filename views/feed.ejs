@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css" />
+    <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+    <title>Feed</title>
+</head>
+<body class="profile">
+    <% if(user){ %>
+    <section>
+    <div id="topList">
+        <ul class="noStyle">
+            <li> <a href="/">Home</a></li>
+            <li>Feed</li>
+            <li> <a href="logout">Logout</a></li>
+        </ul>
+    </div>
+    <header class="major align-center">
+        <h1>Your Nodela Feed </h1>
+</header>
+
+<section class="newPost">
+<!-- Here is where the post will be added -->
+<% if(posts) { %>         
+    <% posts.forEach(el=> { %>
+        
+        <li class="postsList"  data-id='<%=el._id%>' data-user ="<%=el.userId%>"> 
+           
+            <ul>
+              <div class="postAuthor"><%=el.userName %></div>
+          
+              <div class="postTitle"> <span class="titleSpan"> <%= el.title %></span>  </div>
+  
+              <div class="postContent"> <%= el.story %> </div>
+      
+              <span><%= "Created: " + el.createdAt.toLocaleDateString('en-US') %> </span>
+              </ul>
+               
+                 <%if (user.nodellaUsername==el.userName) { %>
+                  <hr>
+                  <span><i class="fas fa-trash del"></i></span>
+                  <%} %>
+                  <hr>
+                
+
+                </li>
+        
+
+    <% }); %>
+
+  
+  
+<% } %>
+
+<% } %>
+
+</ul>
+</section>
+</section>
+
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
