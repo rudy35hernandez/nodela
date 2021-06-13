@@ -62,12 +62,12 @@
       <% posts.forEach(el => { %>
       <!--desperate times call for desperate hr tags. I'm sorry :(-->
       
-          <li data-id='<%=el._id%>'> 
+          <li class="postsList" data-id='<%=el._id%>'> 
            
               <ul>
-                <div class="postAuthor"> Author: <%= user.nodellaUsername %></div>
+                <div class="postAuthor"><%= user.nodellaUsername %></div>
             
-                <div class="postTitle"> Title: <%= el.title %>  </div>
+                <div class="postTitle"> <span class="titleSpan">Title: <%= el.title %></span>  </div>
     
                 <div class="postContent"> Story: <%= el.story %> </div>
         
