@@ -67,9 +67,9 @@
               <ul>
                 <div class="postAuthor"><%= user.nodellaUsername %></div>
             
-                <div class="postTitle"> <span class="titleSpan">Title: <%= el.title %></span>  </div>
+                <div class="postTitle"> <span class="titleSpan"> <%= el.title %></span>  </div>
     
-                <div class="postContent"> Story: <%= el.story %> </div>
+                <div class="postContent"> <%= el.story %> </div>
         
                 <span><%= "Created: " + el.createdAt.toLocaleDateString('en-US') %> </span>
                 </ul>

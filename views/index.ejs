@@ -12,10 +12,27 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
 	</head>
+	
 	<body class="is-preload">
 <!--If user is not logged in-->
-
+		<% if (user) { %>
 		<!-- Header -->
+			<header id="header">
+				
+				<div class="content">
+					<h1>Nodela</h1>
+					<!-- <p>Community for fellow Node.js users <br> to share their Nodellas!</p> -->
+					<ul class="actions">
+						<li><a href="/profile" class="button primary icon solid">Profile</a></li>
+						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
+					</ul>
+				</div>
+			</header>
+		`<% } %>
+
+		
+		<% if (!user) { %>
+
 			<header id="header">
 				
 				<div class="content">
@@ -27,9 +44,8 @@
 					</ul>
 				</div>
 			</header>
-		
-		
 
+		<% } %>
 		<!-- One -->
 			<section id="one" class="wrapper style2 special">
 				<header class="major">

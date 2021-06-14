@@ -4232,5 +4232,9 @@ input, select, textarea {
 		border: solid .01rem rgb(236, 236, 236);
 	}
 
+	.del {
+		padding: 0rem 0rem 2rem 1rem;
+		color: #4696e5
+	}
 
 
