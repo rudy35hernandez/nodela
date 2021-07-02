@@ -21,6 +21,10 @@ const StorySchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    comments: {
+        type: [String],
+        default: []
     }
 })
 

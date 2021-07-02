@@ -21,9 +21,6 @@
         <h1>Post your Nodela <%= user.nodellaUsername %> </h1>
 </header>
 
-<section>
-<!-- Here is where the post will be added -->
-</section>
 
 <article class="story">
     
@@ -38,14 +35,13 @@
             />
             <br>
         <label for="story" class="profileHeader">My Story</label>
-        <textarea  
-            name="story" 
-            id="push-story" 
-            rows="4" cols="4" 
-            minlength="10" 
-            placeholder="story here" 
-            required>
-        </textarea> 
+        <textarea 
+        name="story" 
+        id="push-story" 
+        rows="4" cols="4" 
+        minlength="10" 
+        placeholder="story here" 
+        required></textarea> 
     <br>
     <input 
         class="button primary icon solid"
@@ -60,8 +56,7 @@
     <ul>
       <% if(posts) { %>
       <% posts.forEach(el => { %>
-      <!--desperate times call for desperate hr tags. I'm sorry :(-->
-      
+     
           <li class="postsList" data-id='<%=el._id%>'> 
            
               <ul>
@@ -69,7 +64,7 @@
             
                 <div class="postTitle"> <span class="titleSpan"> <%= el.title %></span>  </div>
     
-                <div class="postContent"> <%= el.story %> </div>
+                <div class="postContent"><%=el.story%></div>
         
                 <span><%= "Created: " + el.createdAt.toLocaleDateString('en-US') %> </span>
                 </ul>

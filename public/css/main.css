@@ -313,12 +313,12 @@ input, select, textarea {
 	}
 
 	a {
+		text-decoration: none;
 		color: inherit;
-		border-bottom-color: #d6d6d6;
 	}
 
 		a:hover {
-			color: #4696e5;
+			color: none;
 		}
 
 	strong, b {
@@ -3927,7 +3927,7 @@ input, select, textarea {
 			color: white;
 		}
 		
-		.noStyle{
+		.noStyle {
 			list-style: none;
 		}
 		/*               */
@@ -4234,10 +4234,13 @@ input, select, textarea {
 
 	.del {
 		padding: 0rem 0rem 2rem 1rem;
-		color: #4696e5
+		color: #4696e5;
+		cursor: pointer;
 	}
 
 
 	.homeContent{
 		padding: auto
 	}
+
+	

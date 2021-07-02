@@ -12,6 +12,16 @@ module.exports = {
       console.log(err);
     }
   },
+
+  getPost: async (req, res) => {
+    try{
+    const post = await Post.findById(req.params.id)
+    res.render("story.ejs", {post: post, user: req.user})
+  } catch(err) {
+    console.log(err)
+  }
+  },
+
   createPost: async (req, res) => {
     console.log(req.user);
     console.log(req.body)

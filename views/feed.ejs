@@ -14,7 +14,7 @@
     <div id="topList">
         <ul class="noStyle">
             <li> <a href="/">Home</a></li>
-            <li>Feed</li>
+            <li><a href="/profile">Profile</a></li>
             <li> <a href="logout">Logout</a></li>
         </ul>
     </div>
@@ -32,7 +32,11 @@
             <ul>
               <div class="postAuthor"><%=el.userName %></div>
           
-              <div class="postTitle"> <span class="titleSpan"> <%= el.title %></span>  </div>
+              <div class="postTitle"> 
+                  <a href="/posts/<%=el._id%>">
+                <span class="titleSpan"> <%= el.title %></span>  
+                  </a>
+            </div>
   
               <div class="postContent"> <%= el.story %> </div>
       
