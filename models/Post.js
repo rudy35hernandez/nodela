@@ -23,7 +23,7 @@ const StorySchema = new mongoose.Schema({
         default: Date.now
     },
     comments: {
-        type: [String],
+        type: [Object],
         default: []
     }
 })
