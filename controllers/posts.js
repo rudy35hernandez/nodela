@@ -39,6 +39,26 @@ module.exports = {
     }
   },
 
+  addComment: async(req, res) => {
+    try{
+      await Post.findOneAndUpdate({ _id: req.params.id}, {
+        $push: {
+          comments: {
+            comment: req.body.comment,
+            user: req.user.nodellaUsername
+          }
+        },
+        $inc: { commentsLength: 1 }
+      } )
+      console.log(req.body.comment)
+      console.log(req.user)
+      res.redirect(`/${req.params.id}`)
+    
+    } catch(err){
+        console.log(err)
+    }
+  },
+
   likePost: async (req, res) => {
     try {
       await Post.findOneAndUpdate(
