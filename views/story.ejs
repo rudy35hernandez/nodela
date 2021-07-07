@@ -27,6 +27,31 @@
     <div class="postContent"><%= post.story %></div>
 </section>
 
+<% if (user.nodellaUsername !== 'guest') { %>
+    <article class="story">
+        <form 
+         action="/addComment/<%=post.id %>/?_method=PUT"
+         method="POST">
+         <textarea
+         id="push-story"
+         name="comment"
+         rows="4" cols="4"
+         minlength="10"
+         placeholder="Comment Here"
+         required></textarea>
+         <br>
+         <input
+            class="button primary icon solid"
+            id="submit"
+            type="submit"
+            value="Comment"/>
+         </form>
+    </article>
+
+
+<% } %>
+
+
 
 
     <script src="js/main.js"></script>
