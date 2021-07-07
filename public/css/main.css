@@ -4208,14 +4208,15 @@ input, select, textarea {
 		background-color: white;
 		width: 100%;
 		font-size: 1.5rem;
-		border: black solid
+		border: solid .01rem rgb(148, 146, 146);
+		color: black
 	}
 
 	.postTitle{
 		padding: 1rem;
 		min-height: 2rem;
 		background-color: white;
-		border: solid .01rem rgb(236, 236, 236);
+		border: solid .01rem rgb(148, 146, 146);
 		width: 100%;
 		font-size: 1.5rem;
 		color: black;
@@ -4229,7 +4230,8 @@ input, select, textarea {
 		padding: 1rem;
 		min-height: 6rem;
 		width: 100%;
-		border: solid .01rem rgb(236, 236, 236);
+		border: solid .01rem rgb(148, 146, 146);
+		color: black
 	}
 
 	.del {
@@ -4243,4 +4245,6 @@ input, select, textarea {
 		padding: auto
 	}
 
-	
+	a.noStyling{
+		border-bottom: none;
+	}

@@ -7,6 +7,7 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 
 router.post('/createPost', postsController.createPost)
+router.get('/:id', ensureAuth, postsController.getPost)
 
 // router.put('/likePost/:id', postsController.likePost)
 
