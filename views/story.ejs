@@ -19,7 +19,7 @@
         </ul>
     </div>
     <header class="major align-center">
-        <h1>Your Story <%= user.nodellaUsername %> </h1>
+        <h1><%= post.user %>'s story </h1>
 </header>
 
 <section class="newPost">
@@ -52,14 +52,18 @@
 
 <% } %>
 
+<% if(!post.comments) {%>
+    <h2 class="commentsHeader">No Comments</h2>
+<% } %>
+
 <% if(post.comments) { %>
     <section class="newPost">
         <h2 class="commentsHeader">Comments</h2>
         <div>
             <% post.comments.forEach((el, index) => { %>
-                <li data-id='el._id%>' data-user='<%el.userId%>' class=''>
-                    <h3><%=el.user%></h3>
-                    <p><%=el.comment%></p>
+                <li data-id='el._id%>' data-user='<%el.userId%>' class='commentsList'>
+                    <h3 class="postAuthor"><%=el.user%></h3>
+                    <p class="postContent"><%=el.comment%></p>
                 </li>
                 <hr class="commentBreak">
             <% }) %>

@@ -4260,3 +4260,7 @@ input, select, textarea {
 		border: solid black
 	}
 
+	.commentsList{
+		list-style: none;
+	}
+
