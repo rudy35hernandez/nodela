@@ -4248,3 +4248,15 @@ input, select, textarea {
 	a.noStyling{
 		border-bottom: none;
 	}
+
+	/* comments section */
+
+	.commentsHeader{
+		color: black;
+		text-align: center;
+	}
+
+	.commentBreak{
+		border: solid black
+	}
+

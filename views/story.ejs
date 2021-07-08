@@ -15,6 +15,7 @@
             <li> <a href="/">Home</a></li>
             <li><a href="/feed">Feed</a></li>
             <li> <a href="logout">Logout</a></li>
+            <li> <a href="profile">Profile</a></li>
         </ul>
     </div>
     <header class="major align-center">
@@ -48,6 +49,23 @@
          </form>
     </article>
 
+
+<% } %>
+
+<% if(post.comments) { %>
+    <section class="newPost">
+        <h2 class="commentsHeader">Comments</h2>
+        <div>
+            <% post.comments.forEach((el, index) => { %>
+                <li data-id='el._id%>' data-user='<%el.userId%>' class=''>
+                    <h3><%=el.user%></h3>
+                    <p><%=el.comment%></p>
+                </li>
+                <hr class="commentBreak">
+            <% }) %>
+        </div>
+    </section>
+    
 
 <% } %>
 
