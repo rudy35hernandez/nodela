@@ -4231,7 +4231,8 @@ input, select, textarea {
 		min-height: 6rem;
 		width: 100%;
 		border: solid .01rem rgb(148, 146, 146);
-		color: black
+		color: black;
+		white-space: pre-line;
 	}
 
 	.del {
