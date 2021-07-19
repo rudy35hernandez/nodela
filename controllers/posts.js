@@ -86,5 +86,15 @@ module.exports = {
     }
   },
 
-
+  deleteComment: async (req, res) => {
+    console.log(req.body.commentIdFromJSFIle);
+    try {
+      await Post.findOneAndDelete({ userId: req.user.id, _id: req.body.commentIdFromJSFIle});
+      console.log("Deleted Post");
+      res.json("Deleted it");
+      res.redirect("/story")
+    } catch(err) {
+      console.log(err);
+    }
+  }
 };

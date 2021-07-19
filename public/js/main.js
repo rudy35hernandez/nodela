@@ -1,10 +1,14 @@
 /// use the delete button to remove user's posts
 const deleteBtn = document.querySelectorAll('.del')
+const deleteBtnTwo = document.querySelectorAll('.delTwo')
 
 Array.from(deleteBtn).forEach((el) => {
 	el.addEventListener('click', deletePost)
 })
 
+Array.from(deleteBtnTwo).forEach((el) => {
+	el.addEventListener('click', deleteComment)
+})
 
 /// function that links to delete request
 
@@ -30,7 +34,26 @@ async function deletePost(){
 	}
 }
 
+async function deleteComment(){
+	const commentId = this.parentNode.parentNode.dataset.id
+	console.log(commentId)
 
+	try{
+		const response = await fetch('posts/deleteComment', {
+			method: 'delete',
+			headers: {'Content-type': 'application/json'},
+			body: JSON.stringify({
+				'commentIdFromJSFile': commentId
+			})
+		})
+		const data = await response.json()
+		console.log(data)
+		location.reload()
+	} 
+	catch(err){
+		console.log(err)
+	}
+}
 
 
 
