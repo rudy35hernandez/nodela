@@ -52,24 +52,22 @@
 
 <% } %>
 
-<% if(!post.comments) {%>
-    <h2 class="commentsHeader">No Comments</h2>
-<% } %>
-
-<% if(post.comments) { %>
+<% if(post.comments.length > 0) {%>
     <section class="newPost">
         <h2 class="commentsHeader">Comments</h2>
-        <div>
+        <div data-id="<%= post._id %>">
             <% post.comments.forEach((el, index) => { %>
                 <li data-id='el._id%>' data-user='<%el.userId%>' class='commentsList'>
                     <h3 class="postAuthor"><%=el.user%></h3>
                     <p class="postContent"><%=el.comment%></p>
                 </li>
                 <hr class="commentBreak">
+               <% if(user.nodellaUsername == el.user) { %>
                 <span>
                     <i class="fas fa-trash delTwo">
                     </i>
                 </span>
+            <% } %>
             <% }) %>
         </div>
     </section>
