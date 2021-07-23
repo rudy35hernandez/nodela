@@ -53,22 +53,20 @@
 <% } %>
 
 <% if(post.comments.length > 0) {%>
-    <section class="newPost">
+    <section class="newPost" data-id="<%=post._id%>" >
         <h2 class="commentsHeader">Comments</h2>
-        <div data-id="<%= post._id %>">
-            <% post.comments.forEach((el, index) => { %>
-                <li data-id='<%=el._id%>' data-user='<%=el.userId%>' class='commentsList'>
-                    <h3 class="postAuthor"><%=el.user%></h3>
-                    <p class="postContent"><%=el.comment%></p>
-                </li>
-                <hr class="commentBreak">
-               <% if(user.nodellaUsername == el.user) { %>
+            <% post.comments.forEach((comment, index) => { %>
+                <li data-id='<%=comment._id%>' data-user='<%=comment.userId%>' class='commentsList'>
+                    <h3 class="postAuthor"><%=comment.user%></h3>
+                    <p class="postContent"><%=comment.comment%></p>
+               <% if(user.nodellaUsername == comment.user) { %>
                 <span>
                     <button class='fas fa-trash'>Delete Comment</button>
                 </span>
+            </li>
+            <hr class="commentBreak">
             <% } %>
             <% }) %>
-        </div>
     </section>
     
 
