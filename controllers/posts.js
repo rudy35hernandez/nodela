@@ -87,14 +87,21 @@ module.exports = {
   },
 
   deleteComment: async (req, res) => {
-    console.log(req.body.commentIdFromJSFIle);
-    try {
-      await Post.findOneAndDelete({ userId: req.user.id, _id: req.body.commentIdFromJSFIle});
-      console.log("Deleted Post");
-      res.json("Deleted it");
-      res.redirect("/story")
-    } catch(err) {
-      console.log(err);
-    }
+  console.log('the postId with the comments: '+req.body.postId)
+
+  try {
+    await Post.findOneAndUpdate({ _id: req.body.postId},
+      {
+        $pull: {
+          comments: { _id: req.body.commentId}
+        },
+        $inc: {commentsLength: -1}
+      })
+      console.log('Deleted Comment')
+      res.json('Delete Comment')
+  } catch(err){
+    console.log(err)
+  }
+
   }
 };

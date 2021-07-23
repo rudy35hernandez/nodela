@@ -14,8 +14,8 @@
         <ul class="noStyle">
             <li> <a href="/">Home</a></li>
             <li><a href="/feed">Feed</a></li>
-            <li> <a href="logout">Logout</a></li>
-            <li> <a href="profile">Profile</a></li>
+            <li> <a href="/logout">Logout</a></li>
+            <li> <a href="/profile">Profile</a></li>
         </ul>
     </div>
     <header class="major align-center">
@@ -57,15 +57,14 @@
         <h2 class="commentsHeader">Comments</h2>
         <div data-id="<%= post._id %>">
             <% post.comments.forEach((el, index) => { %>
-                <li data-id='el._id%>' data-user='<%el.userId%>' class='commentsList'>
+                <li data-id='<%=el._id%>' data-user='<%=el.userId%>' class='commentsList'>
                     <h3 class="postAuthor"><%=el.user%></h3>
                     <p class="postContent"><%=el.comment%></p>
                 </li>
                 <hr class="commentBreak">
                <% if(user.nodellaUsername == el.user) { %>
                 <span>
-                    <i class="fas fa-trash delTwo">
-                    </i>
+                    <button class='fas fa-trash'>Delete Comment</button>
                 </span>
             <% } %>
             <% }) %>
