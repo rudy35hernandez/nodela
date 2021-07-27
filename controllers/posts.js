@@ -52,7 +52,7 @@ module.exports = {
       } )
       console.log(req.body.comment)
       console.log(req.user)
-      res.redirect(`/${req.params.id}`)
+      res.redirect(`/posts/${req.params.id}`)
     
     } catch(err){
         console.log(err)
@@ -77,7 +77,12 @@ module.exports = {
   deletePost: async (req, res) => {
     console.log(req.body.postIdFromJSFile);
     try {
-      await Post.findOneAndDelete({ userId: req.user.id, _id: req.body.postIdFromJSFile });
+      await Post.findOneAndDelete(
+        { 
+          userId: req.user.id, 
+          _id: req.body.postIdFromJSFile 
+        }
+        );
       console.log("Deleted Post");
       res.json("Deleted It");
       res.redirect('/profile')
@@ -87,7 +92,8 @@ module.exports = {
   },
 
   deleteComment: async (req, res) => {
-  console.log('the postId with the comments: '+req.body.postId)
+    console.log('the postId with the comments: '+req.body.catchPostId)
+    console.log('the comment id: '+req.body.commentId)
 
   try {
     await Post.findOneAndUpdate({ _id: req.body.postId},
