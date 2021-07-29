@@ -31,7 +31,7 @@
 <% if (user.nodellaUsername !== 'guest') { %>
     <article class="story">
         <form 
-         action="/addComment/<%=post.id %>/?_method=PUT"
+         action="/posts/addComment/<%=post.id %>/?_method=PUT"
          method="POST">
          <textarea
          id="push-story"
@@ -61,7 +61,7 @@
                     <p class="postContent"><%=comment.comment%></p>
                <% if(user.nodellaUsername == comment.user) { %>
                 <span>
-                    <button class='fas fa-trash'>Delete Comment</button>
+                    <button class='fas fa-trash del-comment'>Delete Comment</button>
                 </span>
             </li>
             <hr class="commentBreak">
@@ -75,6 +75,6 @@
 
 
 
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
