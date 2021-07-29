@@ -19,7 +19,7 @@ async function deletePost(){
 	console.log(postId)
 
 	try{
-		const response = await fetch('posts/deletePost', {
+		const response = await fetch('/deletePost', {
 			method: 'delete',
 			headers: {'Content-type': 'application/json'},
 			body: JSON.stringify({
@@ -43,12 +43,12 @@ async function deleteComment(){
 	console.log('comment id: '+ commentId)
 
 	try{
-		const response = await fetch('posts/deleteComment', {
+		const response = await fetch('/posts/deleteComment', {
 			method: 'delete',
 			headers: {'Content-type' : 'application/json'},
 			body: JSON.stringify({
 				'postId': postId,
-				'commendId': commentId
+				'commentId': commentId
 			})
 		})
 		const data = await response.json()

@@ -60,9 +60,9 @@
                     <h3 class="postAuthor"><%=comment.user%></h3>
                     <p class="postContent"><%=comment.comment%></p>
                <% if(user.nodellaUsername == comment.user) { %>
-                <span>
+                
                     <button class='fas fa-trash del-comment'>Delete Comment</button>
-                </span>
+                
             </li>
             <hr class="commentBreak">
             <% } %>
