@@ -36,15 +36,19 @@ async function deletePost(){
 }
 
 async function deleteComment(){
-	const commentId = this.parentNode.parentNode.dataset.id
-	console.log(commentId)
+
+	const postId = this.parentNode.parentNode.dataset.id
+	const commentId = this.parentNode.dataset.id
+	console.log('post id: '+ postId)
+	console.log('comment id: '+ commentId)
 
 	try{
-		const response = await fetch('/deleteComment', {
+		const response = await fetch('posts/deleteComment', {
 			method: 'delete',
 			headers: {'Content-type' : 'application/json'},
 			body: JSON.stringify({
-				'postIdFromJSFile': commentId
+				'postId': postId,
+				'commendId': commentId
 			})
 		})
 		const data = await response.json()
