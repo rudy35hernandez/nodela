@@ -35,7 +35,7 @@
          method="POST">
          <textarea
          id="push-story"
-         name="comment"
+         name="text"
          rows="4" cols="4"
          minlength="10"
          placeholder="Comment Here"
@@ -55,11 +55,11 @@
 <% if(post.comments.length > 0) {%>
     <section class="newPost" data-id="<%=post._id%>" >
         <h2 class="commentsHeader">Comments</h2>
-            <% post.comments.forEach((comment, index) => { %>
-                <li data-id='<%=comment._id%>' data-user='<%=comment.userId%>' class='commentsList'>
-                    <h3 class="postAuthor"><%=comment.user%></h3>
-                    <p class="postContent"><%=comment.comment%></p>
-               <% if(user.nodellaUsername == comment.user) { %>
+            <% post.comments.forEach(comment => { %>
+                <li data-id='<%=comment._id%>'  class='commentsList'>
+                    <h3 class="postAuthor"><%=comment.user.nodellaUsername%></h3>
+                    <p class="postContent"><%= comment.text %></p>
+               <% if(user.nodellaUsername == comment.user.nodellaUsername) { %>
                 
                     <button class='fas fa-trash del-comment'>Delete Comment</button>
                 

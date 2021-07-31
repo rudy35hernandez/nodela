@@ -44,13 +44,13 @@ module.exports = {
       await Post.findOneAndUpdate({ _id: req.params.id}, {
         $push: {
           comments: {
-            comment: req.body.comment,
-            user: req.user.nodellaUsername
+            text: req.body.text,
+            user: req.user
           }
         },
         $inc: { commentsLength: 1 }
       } )
-      console.log(req.body.comment)
+      console.log(req.body.text)
       console.log(req.user)
       res.redirect(`/posts/${req.params.id}`)
     
