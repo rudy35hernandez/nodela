@@ -14,6 +14,12 @@ Ultimately, this is a social but educational application that will help develope
 ## How it's made!
 **Tech used:** HTML, CSS, Javascript, Express.js, Node.js, EJS, MongoDb, Mongoose
 
+## Optimizations
+
+So far the app allows users to post stories, look at the feed for all users' stories, and you can click on each story individually to visit 
+its page and leave a comment for the post. I will add a like button for stories in the near future, and there will also be some visual
+changes to the comment and story divs.
+
 
 Fractal by HTML5 UP
 html5up.net | @ajlkn
