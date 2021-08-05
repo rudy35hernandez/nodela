@@ -6,7 +6,7 @@ Other users can chime in to share similar accounts, and how they were able to so
 and giving a step by step explanation really helps you recall the situation and solution should you ever encounter it again.
 Ultimately, this is a social but educational application that will help developers thrive! 
 
-![alt tag](https://i.ibb.co/bbqVDqc/Screenshot-167.png)
+![alt tag](https://i.ibb.co/QFTz0BX/Nodela.png)
 
 **Link to project:** https://nodela1.herokuapp.com/
 
