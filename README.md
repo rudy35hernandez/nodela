@@ -7,6 +7,7 @@ and giving a step by step explanation really helps you recall the situation and 
 Ultimately, this is a social but educational application that will help developers thrive! 
 
 ![alt tag](https://i.ibb.co/QFTz0BX/Nodela.png)
+![alt tag](https://i.ibb.co/s3J3d2t/profile.png)
 
 **Link to project:** https://nodela1.herokuapp.com/
 
