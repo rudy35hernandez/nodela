@@ -11,7 +11,7 @@ Ultimately, this is a social but educational application that will help develope
 
 **Link to project:** https://nodela1.herokuapp.com/
 
-## How it's made!
+## How it's made:
 **Tech used:** HTML, CSS, Javascript, Express.js, Node.js, EJS, MongoDb, Mongoose
 
 ## Optimizations
@@ -19,6 +19,14 @@ Ultimately, this is a social but educational application that will help develope
 So far the app allows users to post stories, look at the feed for all users' stories, and you can click on each story individually to visit 
 its page and leave a comment for the post. I will add a like button for stories in the near future, and there will also be some visual
 changes to the comment and story divs.
+
+## Lesson/Lessons learned:
+I learned how important it is to plan your schemas before diving into a project. The database structure is vital to effectively grab
+and use the data that is stored. One example I have of this, is the issue I had with comments on my project. I was unable to 
+separate comments by users when I had my comment object inside my posts/story objects. Creating an entirely new schema for comments
+created an ID for each comment made, which created a method for me to pinpoint specific comments and do what I wanted with them.
+There were other things that I learned, but this so far has been my biggest takeaway.
+
 
 
 Fractal by HTML5 UP
