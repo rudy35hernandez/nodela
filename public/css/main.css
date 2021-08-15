@@ -4050,6 +4050,7 @@ input, select, textarea {
 				font-size: 0.8em;
 			}
 
+		
 	}
 
 	@media screen and (max-width: 480px) and (orientation: portrait) {
@@ -4267,4 +4268,19 @@ input, select, textarea {
 
 	.del-comment{
 		border: none
+	}
+
+
+
+
+	@media screen and (max-width: 900px){
+		#two{
+			margin-right: 8rem
+		}
+	}
+	
+	@media screen and (max-width: 500px) {
+		#two{
+			margin-right: 7rem
+		}
 	}
