@@ -19,7 +19,7 @@ async function deletePost(){
 	console.log(postId)
 
 	try{
-		const response = await fetch('/deletePost', {
+		const response = await fetch('/posts/deletePost', {
 			method: 'delete',
 			headers: {'Content-type': 'application/json'},
 			body: JSON.stringify({

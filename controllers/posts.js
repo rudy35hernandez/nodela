@@ -78,12 +78,7 @@ module.exports = {
   deletePost: async (req, res) => {
     console.log(req.body.postIdFromJSFile);
     try {
-      await Post.findOneAndDelete(
-        { 
-          userId: req.user.id, 
-          _id: req.body.postIdFromJSFile 
-        }
-        );
+      await Post.findOneAndDelete({ userId: req.user.id, _id: req.body.postIdFromJSFile});
       console.log("Deleted Post");
       res.json("Deleted It");
       res.redirect('/profile')
