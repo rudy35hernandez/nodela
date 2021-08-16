@@ -1,6 +1,7 @@
 const Post = require("../models/Post");
 
 module.exports = {
+  
   getPosts: async (req, res) => {
     console.log("user: ", req.user);
     try {
