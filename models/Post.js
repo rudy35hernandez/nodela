@@ -6,7 +6,7 @@ const CommentSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId, ref: 'User',
         sparse: true,
-        unique: false
+        unique: false,
     },
 
     text: {
