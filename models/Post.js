@@ -3,6 +3,12 @@ const User = require('./User')
 
 const CommentSchema = new mongoose.Schema({
 
+    user: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'User',
+        sparse: true,
+        unique: false
+    },
+
     text: {
         type: String,
         required: true,
@@ -11,12 +17,6 @@ const CommentSchema = new mongoose.Schema({
     date: {
         type: String,
         require: true,
-    },
-
-    user: {
-        type: User.UserSchema,
-        sparse: true,
-        unique: false
     },
 
     likes: {
