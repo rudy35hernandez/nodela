@@ -56,10 +56,10 @@
     <section class="newPost" data-id="<%=post._id%>" >
         <h2 class="commentsHeader">Comments</h2>
             <% post.comments.forEach(comment => { %>
-                <li data-id='<%=comment._id%>'  class='commentsList'>
-                    <h3 class="postAuthor"><%=comment.user.nodellaUsername%></h3>
+                <li data-id='<%=comment._id%>' data-user ="<%=comment.user%>" class='commentsList'>
+                    <h3 class="postAuthor"><%=comment.usernameOne%></h3>
                     <p class="postContent"><%= comment.text %></p>
-               <% if(user.nodellaUsername == comment.user.nodellaUsername) { %>
+               <% if(user.nodellaUsername === comment.usernameOne) { %>
                 
                     <button class='fas fa-trash del-comment'>Delete Comment</button>
                 

@@ -46,7 +46,7 @@ module.exports = {
         $push: {
           comments: {
             text: req.body.text,
-            user: req.user
+            usernameOne: req.user.nodellaUsername
           }
         },
         $inc: { commentsLength: 1 }
