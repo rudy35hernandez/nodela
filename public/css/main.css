@@ -4283,4 +4283,10 @@ input, select, textarea {
 		#two{
 			margin-right: 7rem
 		}
+
+		.newPost{
+			width: 130%;
+			margin-left: -5rem;
+		}
+
 	}
